@@ -4,6 +4,7 @@
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15404"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -14,13 +15,71 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="uSi-17-tdk">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="yk0-C9-MBb"/>
+                                </constraints>
+                                <textInputTraits key="textInputTraits"/>
+                            </searchBar>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="cnh-Wr-55R">
+                                <rect key="frame" x="0.0" y="44" width="375" height="623"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="42d-gh-5wI">
+                                    <size key="itemSize" width="121" height="138"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="Cell" id="9ud-xM-QdT" customClass="CollectionViewCell" customModule="Pokemon" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="121" height="138"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="gxP-dq-kI6">
+                                            <rect key="frame" x="0.0" y="0.0" width="121" height="138"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nome" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7wd-uj-Ih4">
+                                                    <rect key="frame" x="5" y="97" width="111" height="16"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="trailing" secondItem="7wd-uj-Ih4" secondAttribute="trailing" constant="5" id="1QI-Dp-KPL"/>
+                                                <constraint firstAttribute="bottom" secondItem="7wd-uj-Ih4" secondAttribute="bottom" constant="25" id="Z8c-5K-Sqn"/>
+                                                <constraint firstItem="7wd-uj-Ih4" firstAttribute="leading" secondItem="gxP-dq-kI6" secondAttribute="leading" constant="5" id="apu-xB-Ohb"/>
+                                            </constraints>
+                                        </collectionViewCellContentView>
+                                        <size key="customSize" width="121" height="138"/>
+                                        <connections>
+                                            <outlet property="namePokemon" destination="7wd-uj-Ih4" id="1fT-gE-u29"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
+                            </collectionView>
+                        </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="uSi-17-tdk" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="3Tg-aS-k6g"/>
+                            <constraint firstItem="cnh-Wr-55R" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="BeI-X7-u6j"/>
+                            <constraint firstItem="cnh-Wr-55R" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="FwA-Cl-AVi"/>
+                            <constraint firstItem="cnh-Wr-55R" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="IjW-PI-jPA"/>
+                            <constraint firstItem="uSi-17-tdk" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="ard-br-w4e"/>
+                            <constraint firstItem="uSi-17-tdk" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="fKU-jL-cTn"/>
+                            <constraint firstItem="cnh-Wr-55R" firstAttribute="top" secondItem="uSi-17-tdk" secondAttribute="bottom" id="pPF-8i-2hQ"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="collectionView" destination="cnh-Wr-55R" id="OIQ-Iq-yRY"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="139" y="94"/>
+            <point key="canvasLocation" x="138.40000000000001" y="93.103448275862078"/>
         </scene>
     </scenes>
 </document>

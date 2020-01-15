@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		229A1ADE23CF4ACC009ACE52 /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 229A1ADD23CF4ACC009ACE52 /* CollectionViewCell.swift */; };
 		22D3C45F23CCA71900914388 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22D3C45E23CCA71900914388 /* AppDelegate.swift */; };
 		22D3C46123CCA71900914388 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22D3C46023CCA71900914388 /* SceneDelegate.swift */; };
 		22D3C46323CCA71900914388 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22D3C46223CCA71900914388 /* ViewController.swift */; };
@@ -16,6 +17,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		229A1ADD23CF4ACC009ACE52 /* CollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewCell.swift; sourceTree = "<group>"; };
 		22D3C45B23CCA71900914388 /* Pokemon.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Pokemon.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		22D3C45E23CCA71900914388 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		22D3C46023CCA71900914388 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -60,6 +62,7 @@
 				22D3C46023CCA71900914388 /* SceneDelegate.swift */,
 				22D3C46223CCA71900914388 /* ViewController.swift */,
 				22D3C46423CCA71900914388 /* Main.storyboard */,
+				229A1ADD23CF4ACC009ACE52 /* CollectionViewCell.swift */,
 				22D3C46723CCA71E00914388 /* Assets.xcassets */,
 				22D3C46923CCA71E00914388 /* LaunchScreen.storyboard */,
 				22D3C46C23CCA71F00914388 /* Info.plist */,
@@ -140,6 +143,7 @@
 			files = (
 				22D3C46323CCA71900914388 /* ViewController.swift in Sources */,
 				22D3C45F23CCA71900914388 /* AppDelegate.swift in Sources */,
+				229A1ADE23CF4ACC009ACE52 /* CollectionViewCell.swift in Sources */,
 				22D3C46123CCA71900914388 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
