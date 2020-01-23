@@ -11,15 +11,9 @@ import UIKit
 class CollectionViewCell: UICollectionViewCell {
     
     
-   // @IBOutlet weak var imagePokemon: UIImageView!
-    
+    @IBOutlet weak var imagePokemon: UIImageView!
     
     @IBOutlet weak var namePokemon: UILabel!
-    
-    func Teste(){
-        //self.namePokemon.text = pokemons
-        
-    }
     
     
 }
