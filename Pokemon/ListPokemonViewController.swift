@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
+class ListPokemonViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
      
     // Outlet com a UICollectionView (Após clicar no Storyboard, arrasta segurando o control para criar o Outlet)
     @IBOutlet weak var collectionView: UICollectionView!
@@ -63,9 +63,10 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath) as! CollectionViewCell
         let poke = pokemons[indexPath.item]
+        
         cell.namePokemon.text = poke.name
-        //print(poke.moves)
-        //print(poke.types)
+//        print(poke.name)
+        print(poke.types)
         let url = URL(string: poke.sprites.imageUrl)
             cell.imagePokemon.load(url: url!)
 
@@ -73,10 +74,28 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
         
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        //print(segue.identifier) - Printa as habilidades do Pokemon escolhido
+        
+        if let detailViewController = segue.destination  as? DetailPokemonViewController {
+            if let pokemon = sender as? PokemonElement{
+                detailViewController.pokemon = pokemon
+            }
+     
+        }
+        
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let poke = pokemons[indexPath.row]
+        //print(poke.name)
+        self.performSegue(withIdentifier: "seguePokemon", sender: poke)
+        
+    }
 }
 
 
-extension ViewController: UICollectionViewDelegateFlowLayout {
+extension ListPokemonViewController: UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let w = self.view.bounds.width
