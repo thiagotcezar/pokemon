@@ -13,9 +13,13 @@ class PokemonCell: UITableViewCell {
     
     @IBOutlet weak var pokemonImage: UIImageView!
     
+    @IBOutlet weak var pokemonImageBack: UIImageView!
+    
     @IBOutlet weak var nameLabel: UILabel!
     
     @IBOutlet weak var typeLabel: UILabel!
+    
+    @IBOutlet weak var idLabel: UILabel!
     
     
 
@@ -33,7 +37,7 @@ class PokemonCell: UITableViewCell {
     }
     
     func setType(type: Types){
-        self.typeLabel.text = type.type.name
+        self.typeLabel.text = type.type.name.capitalized
     }
     
     

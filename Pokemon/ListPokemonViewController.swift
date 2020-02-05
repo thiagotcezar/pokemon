@@ -20,8 +20,10 @@ class ListPokemonViewController: UIViewController, UICollectionViewDelegate, UIC
         super.viewDidLoad()
         collectionView.delegate = self
         collectionView.dataSource = self
-        let addButton = UIBarButtonItem(barButtonSystemItem: .refresh, target: self, action: #selector(accessibilityPerformMagicTap))
-        self.navigationItem.rightBarButtonItem = addButton
+        
+//        // Adicionado refresh na Navigation Bar
+//        let addButton = UIBarButtonItem(barButtonSystemItem: .refresh, target: self, action: #selector(accessibilityPerformMagicTap))
+//        self.navigationItem.rightBarButtonItem = addButton
         
         fetchPokemon()
         
@@ -30,7 +32,7 @@ class ListPokemonViewController: UIViewController, UICollectionViewDelegate, UIC
     func fetchPokemon(){
         var count = 1
         
-        for i in count...count + 50 {
+        for i in count...count + 150 {
 
             let request = RequestGet()
             request.fetchData(url: "https://pokeapi.co/api/v2/pokemon/\(i)") { (result) in
@@ -53,7 +55,7 @@ class ListPokemonViewController: UIViewController, UICollectionViewDelegate, UIC
             
         }
         
-        count = count + 50
+        count = count + 150
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -64,10 +66,10 @@ class ListPokemonViewController: UIViewController, UICollectionViewDelegate, UIC
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath) as! CollectionViewCell
         let poke = pokemons[indexPath.item]
         
-        cell.namePokemon.text = poke.name
-//        print(poke.name)
-        print(poke.types)
-        let url = URL(string: poke.sprites.imageUrl)
+        cell.namePokemon.text = (poke.name).capitalized
+        //print(poke.name)
+        //print(poke.types)
+        let url = URL(string: poke.sprites.imageBackUrl)
             cell.imagePokemon.load(url: url!)
 
             return cell

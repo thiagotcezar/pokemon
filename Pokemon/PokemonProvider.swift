@@ -37,7 +37,6 @@ class RequestGet{
                     completion(.failure)
                 }
             case let .failure(_):
-                print("error")
                 completion(.failure)
             }
         }

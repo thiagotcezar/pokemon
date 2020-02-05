@@ -28,9 +28,11 @@ struct PokemonElement: Codable {
 
 struct Sprites: Codable {
     let imageUrl: String
+    let imageBackUrl: String
     
     enum CodingKeys: String, CodingKey{
         case imageUrl = "front_default"
+        case imageBackUrl = "back_default"
     }
 }
 

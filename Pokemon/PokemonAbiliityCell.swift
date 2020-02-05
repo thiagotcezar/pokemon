@@ -24,7 +24,7 @@ class PokemonAbiliityCell: UITableViewCell {
     }
     
     func setData(move: Move){
-        self.abilityLabel.text = move.ability.name
+        self.abilityLabel.text = move.ability.name.capitalized
     }
     
 
