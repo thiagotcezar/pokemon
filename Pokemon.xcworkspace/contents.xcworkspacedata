@@ -2,6 +2,9 @@
 <Workspace
    version = "1.0">
    <FileRef
+      location = "group:/Users/k2.thiago/Documents/Pokemon/README.md">
+   </FileRef>
+   <FileRef
       location = "group:Pokemon.xcodeproj">
    </FileRef>
    <FileRef
