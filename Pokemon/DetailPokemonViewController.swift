@@ -25,7 +25,8 @@ class DetailPokemonViewController: UIViewController {
         self.title = (poke.name).uppercased()
         
         // Setando o nome do back button da navigation bar
-        self.navigationController?.navigationBar.topItem?.title = "Back"
+        //self.navigationController?.navigationBar.topItem?.title = "Back"
+
         
         // Do any additional setup after loading the view.
     }
@@ -99,7 +100,6 @@ extension DetailPokemonViewController: UITableViewDataSource, UITableViewDelegat
                     let url = URL(string: (pokemon?.sprites.imageUrl)!)
                     PokemonCell.pokemonImage.load(url: url!)
                     
-                    // Seta a imagem back do Pokemon
                     
                     // seta o tipo do pokemon
                     let pokeType = pokemon?.types[indexPath.item]
